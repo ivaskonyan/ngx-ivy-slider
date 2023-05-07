@@ -1,0 +1,26 @@
+<div class="main-scene">
+  <h1>Sliders</h1>
+  <div class="regular-slider">
+    <div class="regular-slider__header">
+      <h2>Regular slider</h2>
+      <div class="regular-slider__header__controls">
+        <button (click)="toggleDisabled()" class="btn btn--small btn--secondary">
+          {{ disabled ? 'Enable' : 'Disable' }}
+        </button>
+        <button (click)="togglePips()" class="btn btn--small btn--secondary">
+          {{ pips ? 'Hide pips' : 'Show pips' }}
+        </button>
+      </div>
+    </div>
+    <ngx-ivy-slider
+      [disabled]="disabled"
+      [start]="[10,80]"
+      [pips]="pips"
+      [step]="10"
+      [connect]="true"
+      [keyboardDefaultStep]="10"
+      (onSliderSlide)="onSliderUpdate($event)"
+    >
+    </ngx-ivy-slider>
+  </div>
+</div>
